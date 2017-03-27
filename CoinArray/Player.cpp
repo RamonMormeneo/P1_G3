@@ -2,7 +2,8 @@
 #include <iostream>
 Player::Player(Mapa &a, coinmanger &b):mymapa(a) , micoinmanager(b)
 {
-	do// para que la posicion del jugador no sea el mismo que una moneda
+	do
+	//Haremos que la posición del jugador no sea la misma que la de una moneda.
 	{
 		fila = rand()%(mymapa.numfilas-1);
 		column = rand() % (mymapa.numcolums-1);
@@ -43,6 +44,7 @@ void Player::move(Input::Key a)
 		}
 		
 		break;
+
 	case Input::Key::S:
 		if (fila != (mymapa.numfilas - 1))
 		{
@@ -53,6 +55,7 @@ void Player::move(Input::Key a)
 		}
 		
 		break;
+
 	case Input::Key::D:
 		if (column != (mymapa.numcolums - 1))
 		{
@@ -63,6 +66,7 @@ void Player::move(Input::Key a)
 		}
 		
 		break;
+
 	case Input::Key::ESC:
 		exit(0);
 		break;
